@@ -1,0 +1,24 @@
+{
+  "name": "jsvanilla",
+  "type": "module",
+  "version": "1.0.0",
+  "description": "Web básica con Js Vanilla",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "nodemon ./backend/server.js"
+  },
+  "keywords": [
+    "JavaScript",
+    "Vanilla",
+    "Web"
+  ],
+  "author": "Erick Yusuke Moya Flores - erickd3v",
+  "license": "ISC",
+  "dependencies": {
+    "express": "4.18.2"
+  },
+  "devDependencies": {
+    "nodemon": "3.0.1"
+  }
+}
