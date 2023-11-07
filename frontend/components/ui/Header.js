@@ -1,50 +1,31 @@
-export default function header() {
-    // Creando la etiqueta 'header'
-    const headerElement = document.createElement('header');
+export default class Header {
 
-    // Aquí pondremos los elementos previamente creados.
-    // let h1Element = title()
-    // let pElement = paragraph()
-    let logoElement = logo();
-    let navIcon = nav();
-    const elements = [
-        logoElement = logo(),
-        navIcon = nav()
-    ]
+    render() {
+        // Creando la etiqueta 'header'
+        const headerElement = document.createElement('header');
 
-    // Incrustaremos cada elemento con la metodo '.appendChild'
-    elements.forEach(element => {
-        headerElement.appendChild(element);
-    })
+        // Aquí pondremos los elementos previamente creados.
+        let logoElement = logo();
+        let navBar = nav();
+        const elements = [
+            logoElement = logo(),
+            navBar = nav()
+        ]
 
-    return document.body.appendChild(headerElement)
+        // Incrustaremos cada elemento con la metodo '.appendChild'
+        elements.forEach(e => {
+            headerElement.appendChild(e);
+        })
+
+        return headerElement;
+    }
 }
 
 
-// const title = () => {
-//     const h1Element = document.createElement('h1');
-//     h1Element.innerText = 'El Blog de un Dev';
-//     return h1Element;
-// }
-
-// const paragraph = () => {
-//     const pElement = document.createElement('p');
-
-//     // Resaltando el titulo del blog.
-//     const strongElement = document.createElement('strong');
-//     strongElement.innerText = '"El Blog de un Dev" ';
-    
-//     // Incrustanto el texto en la etiqueta 'p'
-//     pElement.innerHTML += 'Muy buenas gente, seais todos bienvenidos a mi primer artiulo en este blog llamado '
-//     pElement.appendChild(strongElement);
-//     pElement.innerHTML += 'en este primer blog les contaré como crear una lading page con Vanilla Js y Css'
-
-//     return pElement;
-// }
-
 const logo = () => {
-    // Creando la etiqueta picture donde se colocara la imagen del logo
+    // Creando la etiqueta picture y su clase 'logo-container' donde se colocara la imagen del logo
     const logoElement = document.createElement('picture');
+    logoElement.classList.add('logoContainer');
 
     // Creando eitiqueta img, su clase e incrustando en la etiqueta 'picture'
     const imageElement = document.createElement('img');
@@ -59,13 +40,130 @@ const logo = () => {
 
 const nav = () => {
     // Creando la etiqueta nav donde se colocaran los elementos relacionados al porfolio
+    const navBar = document.createElement('nav');
+    navBar.classList.add('navContainer');
     /**
      * Fase de desarrollo, colocar en pantalla una alerta que indique que esta en desarrollo luego de colocar la imagen.
      */
+    let buttonContainer = buttonNav();
+    let options = navOptions();
+
+    const elementsNav = [
+        buttonContainer = buttonNav(),
+        options = navOptions(),
+    ]
+
+    elementsNav.forEach(e => {
+        navBar.appendChild(e);
+    })
+    
+    return navBar;
+}
+
+const buttonNav = () => {
+    // Creating the 'button' tag and adding a class to hold the 'navIcon'.
+    const buttonContainer = document.createElement('button');
+    buttonContainer.classList.add('burggerIconContainer');
+
+    // Creating the 'img' tag, embedding the .svg and adding the class.
     const navIcon = document.createElement('img')
-    navIcon.src = '';
+    navIcon.src = '../pictures/svg/menu-button.svg';
     navIcon.alt = 'burgger Icon';
     navIcon.classList.add('burgerIcon');
 
-    return navIcon;
+    // Embedding the img tag in the button tag.
+    buttonContainer.appendChild(navIcon);
+    
+    return buttonContainer;
 }
+
+const navOptions = () => {
+    // 
+    const options = document.createElement('ul');
+    options.classList.add('ulOptions');
+    
+            // Inicio
+    // li
+    let homeContainer = document.createElement('li');
+    homeContainer.classList.add('optionTextContainer');
+    // a
+    let homeText = document.createElement('a');
+    homeText.classList.add('optionText');
+    homeText.href = '#';
+    homeText.innerText = 'Home';
+
+    // 
+    homeContainer.appendChild(homeText);
+
+            // About me
+    // li
+    let aboutContainer = document.createElement('li');
+    aboutContainer.classList.add('optionTextContainer');
+    // a
+    let aboutText = document.createElement('a');
+    aboutText.classList.add('optionText');
+    aboutText.href = '#';
+    aboutText.innerText = 'About me';
+
+    // 
+    aboutContainer.appendChild(aboutText);
+    
+            // Proyects
+    // li
+    let proyectsContainer = document.createElement('li');
+    proyectsContainer.classList.add('optionTextContainer');
+    // a
+    let proyectsText = document.createElement('a');
+    proyectsText.classList.add('optionText');
+    proyectsText.href = '#';
+    proyectsText.innerText = 'Proyects';
+
+    // 
+    proyectsContainer.appendChild(proyectsText);
+    
+            // Contact
+    // li
+    let contactContainer = document.createElement('li');
+    contactContainer.classList.add('optionTextContainer');
+    // a
+    let contactText = document.createElement('a');
+    contactText.classList.add('optionText');
+    contactText.href = '#';
+    contactText.innerText = 'Contact';
+
+    // 
+    contactContainer.appendChild(contactText);
+    
+            // Blog
+    // li
+    let blogContainer = document.createElement('li');
+    blogContainer.classList.add('optionTextContainer');
+    // a
+    let blogText = document.createElement('a');
+    blogText.classList.add('optionText');
+    blogText.href = '#';
+    blogText.innerText = 'Blog';
+
+    // 
+    blogContainer.appendChild(blogText);
+
+    // 
+    const sectionElement = [
+        homeContainer,
+        aboutContainer,
+        proyectsContainer,
+        contactContainer,
+        blogContainer,
+    ]
+
+    sectionElement.forEach(element => {
+        options.appendChild(element)
+    });
+
+    return options
+
+}
+
+// const header = new Header();
+
+// document.body.appendChild(header.render())

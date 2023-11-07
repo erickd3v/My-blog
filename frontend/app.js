@@ -1,14 +1,22 @@
-import header from "./components/ui/Header.js";
-const body = document.getElementsByTagName('body');
-body.innerHtml = [
-    header()
-];
+import Header from './components/ui/Header.js';
+import Main from './components/ui/Main.js';
+import Footer from './components/ui/Footer.js';
+
+export function app() {
+    const header = new Header();
+    document.body.appendChild(header.render())
+    
+    const main = new Main();
+    document.body.appendChild(main.render())
+    const footer = new Footer();
+    document.body.appendChild(footer.render())
 
 
 
-// return title;
+    const burgger = document.querySelector('.burggerIconContainer');
+    const options = document.querySelector('.ulOptions');
 
-// function headers() {
-//     const nav = document.createElement('nav');
-//     // const 
-// }
+    burgger.addEventListener('click', ()=> {
+        options.classList.toggle('active');
+    })
+}
