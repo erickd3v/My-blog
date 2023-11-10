@@ -1,3 +1,5 @@
+// import Blog from "./Blog";
+
 export default class Main {
     render() {
         const mainElement = document.createElement('main');
@@ -58,7 +60,7 @@ const section = () => {
 
 // añadiendo clases
 
-class Article {
+class Article{
     constructor(aHref, img, imgAlt, h2, time, dataTime) {
         this.aHref = aHref;
         this.img = img;
@@ -110,6 +112,6 @@ class Article {
     }
 }
 
-// const main = new Main();
-
-// document.body.appendChild(main.render())
+// class Prueba extends Blog {
+    
+// }
