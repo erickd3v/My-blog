@@ -2,7 +2,7 @@
 # Edit at https://www.toptal.com/developers/gitignore?templates=node,visualstudiocode
 
 ## pack-age ##
-pack-age.json
+package-lock.json
 
 ### Node ###
 # Logs
