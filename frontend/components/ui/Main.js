@@ -33,7 +33,7 @@ const section = () => {
 
     const articleData = [
         {
-            aHref: 'http://localhost:1234/vanilla-js-beneficios-y-pasar-a-framework',
+            aHref: 'vanilla-js-beneficios-y-pasar-a-framework',
             img: '../pictures/images/JsIcon.webp',
             imgAlt: 'imagen de mi Js',
             h2: 'Js Vanilla, que es?, Cuales son sus beneficios y cuando es el momento para aprender un Famework?.',
@@ -41,7 +41,7 @@ const section = () => {
             dataTime: '2023-11-06T00:00:00Z'
         },
         {
-            aHref: 'http://localhost:1234/mi-primer-blog',
+            aHref: 'mi-primer-blog',
             img: '../pictures/images/Profile.webp',
             imgAlt: 'imagen de mi perfil',
             h2: 'Mi primer blog, objetivos y como empezar en el desarrollo web.',
