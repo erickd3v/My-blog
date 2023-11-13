@@ -4,6 +4,8 @@
 ## pack-age ##
 package-lock.json
 
+node_modules
+
 ### Node ###
 # Logs
 logs
