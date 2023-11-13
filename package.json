@@ -1,9 +1,9 @@
 {
   "name": "jsvanilla",
-  "type": "module",
   "version": "1.0.0",
   "description": "Web básica con Js Vanilla",
   "main": "app.js",
+  "type": "module",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "nodemon ./backend/server.js"

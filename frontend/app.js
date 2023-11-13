@@ -5,6 +5,8 @@ import Footer from './components/ui/Footer.js';
 // Blogs
 import { article1, article2 } from './components/ui/Blog.js';
 
+// import { homeRoute } from '../backend/routes/home.js';
+
 // Home
 const header = new Header();
 const main = new Main();

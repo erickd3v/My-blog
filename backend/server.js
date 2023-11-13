@@ -1,20 +1,14 @@
-import express, { static as static_ } from 'express';
-import { join, dirname } from 'path';
-import { fileURLToPath } from 'url';
+import express from 'express';
+import { homeRoute } from './routes/home.js';
 
 const app = express();
 const port = process.env.PORT || 1234; // Puerto del servidor
 
-const currentModuleFile = fileURLToPath(import.meta.url);
-const currentModuleDir = dirname(currentModuleFile);
-
 // Configura una ruta estática para servir los archivos frontend
-app.use(static_(join(currentModuleDir, '../frontend')));
+app.use(express.static('frontend'));
 
 // Ruta para la página principal (index.html)
-app.get('/', (req, res) => {
-  res.sendFile(join(currentModuleDir, '../frontend/index.html'));
-});
+app.use(homeRoute)
 
 //     Blogs
 
