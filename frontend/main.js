@@ -1,5 +1,4 @@
-import { app } from "./app.js"
+import { app } from "./joinFiles.js";
 
 
 app()
-console.log('hola')

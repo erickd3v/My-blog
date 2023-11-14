@@ -7,17 +7,12 @@
     font-size: 22px;
 }
 
-.section-post {
-    border: 1px solid white;
-}
-
 .home-article {
     display: flex;
     text-decoration: none;
     align-items: center;
     gap: 1rem;
     margin: 1rem;
-    border: 1px solid;
 }
 
 .home-article picture img {
@@ -27,6 +22,14 @@
     margin-left: 4px;
     object-fit: contain;
 }
+
+.section-post {
+    margin-bottom: 1rem;
+}
+
+/* time {
+    color: white;
+} */
 
 h2, .meta {
     color: white;

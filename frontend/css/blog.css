@@ -1,0 +1,43 @@
+#article {
+    max-width: 800px;
+    margin: 0 auto;
+    width: 100%;
+    padding: 0 1rem;
+}
+#article-content-wrapper {
+    display: flex;
+}
+#article-content {
+    flex: 1 1;
+    padding-bottom: 2rem;
+    color: white;
+}
+
+#article-header {
+    background-color: transparent;
+    position: relative;
+    margin-bottom: 2.25rem;
+}
+
+#article-header picture {
+    height: 12.5rem;
+    opacity: 0.1;
+    position: absolute;
+    right: 0;
+    width: 12.5rem;
+}
+#article-header img {
+    object-fit: contain;
+    height: 100%;
+    width: 100%;
+}
+
+#article-header h1 {
+    font-size: 2.25rem;
+    line-height: 1.1;
+    font-weight: 600;
+}
+#article-meta {
+    font-size: 0.75rem;
+    margin-top: 0.5rem;
+}

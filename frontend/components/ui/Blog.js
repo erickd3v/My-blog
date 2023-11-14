@@ -1,31 +1,36 @@
+import { article1, article2 } from "../user/UserArticle.js";
+
 export class Blog {
-    constructor(title, paragraph, img, imgRef) {
-        this.title = title;
-        this.paragraph = paragraph;
-        this.img = img;
-        this.imgRef = imgRef;
+    constructor(articleData, paragraphBlog) {
+        this.articleData = articleData;
+        this.paragraphBlog = paragraphBlog;
     }
     render() {
-        const blogElement = document.createElement('main');
+        const blogElement = document.createElement('article');
+        blogElement.id = 'article'
         blogElement.innerHTML = `
-            <h2>${this.title}</h2>
-            <p>${this.paragraph}</p>
-            <img src="${this.img}" alt="${this.imgRef}">
+        <div id="article-content-wrapper">
+                <div id="article-content">
+                    <header id="article-header">
+                        <picture>
+                            <img src='${this.articleData.img}' alt='${this.articleData}'>
+                        </picture>
+                        <div class="article-header-meta">
+                            <h1>${this.articleData.title}</h1>
+                            <div id="article-meta">
+                                <time datetime="${this.articleData.dataTime}">${this.articleData.time}</time>
+                            </div>
+                        </div>
+                    </header>
+                    <div class="article-body">
+                        <p>${this.paragraphBlog}</p>
+                    </div>
+                </div>
+            </div>
         `;
         return blogElement;
     }
 }
 
-export const article1 = new Blog(
-    'Mi primer blog, objetivos y como empezar en el desarrollo web',
-    'Soy el contenido del titulo',
-    '../pictures/images/Profile.webp',
-    'Imagen de mi perfil.'
-);
-
-export const article2 = new Blog(
-    'Js Vanila: ¿Qué es?. ¿Cuáles son sus beneficios? y ¿Cuándo es momento de aprender un framework?',
-    'Soy el contenido del titulo',
-    '../pictures/images/JsIcon.webp',
-    'Logo de JavaScript.'
-);
+export const articleText1 = new Blog(article1, 'Okey empezamos la siguiente semana con el texto');
+export const articleText2 = new Blog(article2, 'Este sera sobre Vanilla Js');
