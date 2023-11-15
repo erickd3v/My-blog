@@ -53,15 +53,10 @@ export function app() {
 
     // Adding functionalities
     const burgger = document.querySelector('.burggerIconContainer');
-    const options = document.querySelector('.ulOptions');
+    const options = document.querySelector('.navContainer');
 
     burgger.addEventListener('click', ()=> {
         options.classList.toggle('active');
-    })
-
-    const logo = document.querySelector('.logo');
-    logo.addEventListener('click', ()=> {
-        location.href = '/'
     });
 }
 
