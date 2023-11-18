@@ -10,9 +10,14 @@ export const getData = (req, res) => {
                 <link rel="stylesheet" href="./css/header.css">
                 <link rel="stylesheet" href="./css/blog.css">
                 <link rel="stylesheet" href="./css/footer.css">
+                <script type="module" src="main.js"></script>
             </head>
             <body>
-            <script type="module" src="main.js"></script>
+            <main class="home-feed">
+                <h1 class="section-title">Últimos artículos<h1>
+                <section class="section-post">
+                </section>
+            </main>
             </body>
         </html>
     `);

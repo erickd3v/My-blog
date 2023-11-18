@@ -1,5 +1,4 @@
 export default class Header {
-
     render() {
         // Creando la etiqueta 'header'
         const headerElement = document.createElement('header');

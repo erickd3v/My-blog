@@ -1,5 +1,4 @@
 import { article1, article2 } from "../user/UserArticle.js";
-
 export class Blog {
     constructor(articleData, paragraphBlog) {
         this.articleData = articleData;
@@ -13,7 +12,7 @@ export class Blog {
                 <div id="article-content">
                     <header id="article-header">
                         <picture>
-                            <img src='${this.articleData.img}' alt='${this.articleData}'>
+                            <img src='${this.articleData.img}' alt='${this.articleData.imgAlt}'>
                         </picture>
                         <div class="article-header-meta">
                             <h1>${this.articleData.title}</h1>

@@ -1,10 +1,11 @@
 .home-feed {
-    padding: 1em;
+    flex: 1 1;
 }
 
 .section-title {
     color: white;
-    font-size: 22px;
+    font-size: 18px;
+    padding-bottom: 8px;
 }
 
 .section-post {
@@ -16,7 +17,7 @@
     text-decoration: none;
     align-items: center;
     gap: 1rem;
-    margin: 1rem;
+    margin: 1rem 0;
     color: white;
 }
 

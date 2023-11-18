@@ -4,10 +4,13 @@ export class Main {
         this.articleData = articleData;
     }
     render() {
-        const sectionElement = document.createElement('section');
-        sectionElement.classList.add('section-post');
-        sectionElement.innerHTML=`
-                <a class="home-article" href="${this.aHref}">
+        const mainElement = document.querySelector('.home-feed');
+        const sectionElement = document.querySelector('.section-post')
+
+        const aElement = document.createElement('a');
+        aElement.classList.add('home-article');
+        aElement.href = this.aHref
+        aElement.innerHTML=`
                     <picture>
                         <img src='${this.articleData.img}' alt='${this.articleData}'>
                     </picture>
@@ -17,9 +20,9 @@ export class Main {
                             <time datetime="${this.articleData.dataTime}">${this.articleData.time}</time>
                         </div>
                     </div>
-                </a>
         `;
-
-        return sectionElement;
+        sectionElement.appendChild(aElement);
+        mainElement.appendChild(sectionElement);
+        return mainElement;
     }
 }

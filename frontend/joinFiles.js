@@ -3,12 +3,11 @@ import Header from './components/ui/Header.js';
 import { Main } from './components/ui/Main.js';
 import Footer from './components/ui/Footer.js';
 // Blogs
-import { articleText1, articleText2 } from './components/ui/Blog.js';
+import { Blog, articleText1, articleText2 } from './components/ui/Blog.js';
 import { article1, article2 } from './components/user/UserArticle.js';
 
 // Home
 const header = new Header();
-const main = new Main();
 const footer = new Footer();
 
 let change = [
@@ -28,12 +27,7 @@ const homeDatas = [
     new Main(endPoint[0], article1),
 ];
 
-const home = change.toSpliced(1,0,
-    homeDatas[0].render(),
-    homeDatas[1].render(),
-    // homeDatas[2].render(),
-    );
-
+const home = change.toSpliced(1, 0, homeDatas[0].render(), homeDatas[1].render());
 
 const article = [
     articleText1,
@@ -44,11 +38,15 @@ const article = [
 const blog1 = change.toSpliced(1, 0, article[0].render())
 const blog2 = change.toSpliced(1, 0, article[1].render())
 
+// This function is the rendering of the application and its interactivity.
 export function app() {
-    
     const currentURL = new URL(window.location.href);
-    
     urlVerification(currentURL);
+
+    // Removing the main tag if the URL is not the root.
+    const mainContent = document.querySelector('main');
+    
+    if(currentURL.pathname !== '/') {mainContent.remove()}
 
 
     // Adding functionalities
@@ -60,14 +58,18 @@ export function app() {
     });
 }
 
+// Rendering home and blogs based the URL.
 function urlVerification(currentURL) {
+    const beta = document.querySelector('title');
     switch (true) {
         case currentURL.pathname === endPoint[0]:
             blog1.forEach(e => { document.body.appendChild(e) });
+            beta.innerHTML = article1.title
             break;
     
         case currentURL.pathname === endPoint[1]:
             blog2.forEach(e => { document.body.appendChild(e) });
+            beta.innerHTML = article2.title
             break;
     
         default:

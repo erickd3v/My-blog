@@ -1,6 +1,7 @@
-/* :root {
-
-} */
+:root {
+    --mx-w-d: 1200px;
+    --p-u-c: 0 32px;
+}
 
 * {
     box-sizing: border-box;
@@ -27,7 +28,12 @@ body::before {
 
 header {
     margin-bottom: 2rem;
-    padding: 0 0.5rem;
+}
+
+.u-center {
+    max-width: var(--mx-w-d);
+    margin: 0 auto;
+    padding: var(--p-u-c);
 }
 
 .header-inner {
@@ -83,7 +89,8 @@ header {
     height: 100%;
     color: white;
     text-decoration: none;
-    padding: 0.5em;
+    padding-left: 1.5em !important;
+    padding: 0.6em;
     border-top: 1px solid hsl(0, 0.16%, 8%);
 }
 
@@ -92,5 +99,39 @@ header {
 }
 
 .active {
-    height: 12rem;
+    height: 13rem;
+}
+
+@media screen and (max-width: 700px) {
+    :root{
+        --p-u-c: 0 16px;
+    }
+    
+}
+
+@media (max-width: 1300px){
+    :root{
+        --mx-w-d: 100%;
+    }
+}
+
+@media screen and (min-width: 1000px) {
+    .burggerIconContainer {
+        display: none;
+    }
+    .navContainer {
+        position: initial;
+        height: auto;
+        width: 50vw;
+        background-color: transparent;
+        text-align: center;
+        transition: none;
+    }
+    .ulOptions {
+        flex-direction: row;
+    }
+    .optionText {
+        border: none;
+        padding: 0.6em !important;
+    }
 }
