@@ -1,0 +1,32 @@
+---
+const href = [
+  {
+    link: [
+      "https://github.com/erickd3v",
+      "https://www.linkedin.com/in/erickd3v/",
+      "https://www.instagram.com/erick.d3v/",
+    ],
+  },
+  { text: ["Github", "Linkedln", "Instagram"] },
+];
+const arial = "de @erickd3v";
+---
+
+<a
+  href="mailto:hola@erickdev.com"
+  target="_blank"
+  rel="noopener nofollow"
+  arial-label="contact">Contacto</a
+>
+{
+  href[0].link.map((linkItem, textItem) => (
+    <a
+      href={linkItem}
+      target="_blank"
+      rel="noopener nofollow"
+      aria-label={href[1].text[textItem] + " " + arial}
+    >
+      {href[1].text[textItem]}
+    </a>
+  ))
+}

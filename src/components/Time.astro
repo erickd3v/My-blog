@@ -1,0 +1,17 @@
+---
+// Utils
+import { formatDate } from "../utils/formatDate";
+
+// variables
+const { date } = Astro.props;
+const rawDate = date.toString().slice(0, 10);
+
+// Convertir la fecha al formato ISO
+const parts = rawDate.split("-");
+const isoDate = `${parts[1]}-${parts[2]}-${parts[0]}`;
+
+// Formatear fecha
+const formattedDate = formatDate(isoDate);
+---
+
+<time class={Astro.props.class} datetime={date}>{formattedDate}</time>

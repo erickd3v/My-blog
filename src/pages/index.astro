@@ -1,0 +1,40 @@
+---
+// Layout
+import Layout from "../layouts/Layout.astro";
+
+// Components
+import BlogPost from "../components/BlogPost.astro";
+import Image from "../components/Image.astro";
+import Time from "../components/Time.astro";
+
+const allPosts = await Astro.glob("./posts/*.md");
+const pageTitle = "Página de inicio";
+---
+
+<Layout pageTitle={pageTitle}>
+  <main class="px-4">
+    <h1
+      class="w-[86%] mx-auto lg:max-w-4xl md:max-w-2xl mb-5 text-lg font-bold"
+    >
+      Últimos artículos
+    </h1>
+    <section class="w-[86%] mx-auto lg:max-w-4xl md:max-w-2xl">
+      {
+        allPosts.map((post) => (
+          <BlogPost url={`/${post.url.split("/").pop()}`} class="flex mb-4">
+            <Image
+              classPic="px-2"
+              classImg="size-[4.5rem] pr-6"
+              img={post.frontmatter.image}
+              alt={post.frontmatter.alt}
+            />
+            <div>
+              <h2 class="font-semibold text-lg">{post.frontmatter.title}</h2>
+              <Time class="text-xs pt-1" date={post.frontmatter.date} />
+            </div>
+          </BlogPost>
+        ))
+      }
+    </section>
+  </main>
+</Layout>

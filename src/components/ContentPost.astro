@@ -1,0 +1,10 @@
+---
+import { Code } from "astro:components";
+// variables
+const { description, code } = Astro.props;
+---
+
+<div>
+  <p>{description}</p>
+  <Code code={`${code}`} lang="js" />
+</div>

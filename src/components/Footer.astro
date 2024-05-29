@@ -1,0 +1,18 @@
+---
+import Image from "./Image.astro";
+import Nav from "./Nav.astro";
+
+//Images
+const localtAlt = "imagen Beta";
+---
+
+<footer class="text-center pt-16 pb-[86px]">
+  <section class="pt-9 mx-auto lg:max-w-xs md:max-w-2xl flex justify-between">
+    <Nav />
+  </section>
+  <Image
+    img="/images/logo.webp"
+    alt={localtAlt}
+    classImg="size-9 object-contain mx-auto mt-9"
+  />
+</footer>

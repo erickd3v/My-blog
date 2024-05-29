@@ -1,0 +1,42 @@
+---
+import Layout from "../layouts/Layout.astro";
+import ContentPost from "../components/ContentPost.astro";
+import Image from "../components/Image.astro";
+import Time from "../components/Time.astro";
+
+// Astro Component
+export async function getStaticPaths() {
+  const allPosts = await Astro.glob("./posts/*.md");
+  return allPosts.map((post) => {
+    const slug = post.url.split("/").pop();
+    return {
+      params: { slug },
+      props: { post },
+    };
+  });
+}
+const { post } = Astro.props;
+---
+
+<Layout pageTitle={post.frontmatter.title}>
+  <section class="w-[82%] mx-auto lg:max-w-4xl md:max-w-2xl">
+    <article class="mx-auto max-w-[800px] w-full">
+      <header class="flex items-center mb-9">
+        <Image
+          classPic="px-2"
+          classImg="w-40 pr-6"
+          img={post.frontmatter.image}
+          alt={post.frontmatter.alt}
+        />
+        <div>
+          <h1 class="text-4xl font-semibold">{post.frontmatter.title}</h1>
+          <Time class="mt-2 text-xs" date={post.frontmatter.date} />
+        </div>
+      </header>
+      <ContentPost
+        description={post.frontmatter.description}
+        code={post.frontmatter.codeJs}
+      />
+    </article>
+  </section>
+</Layout>

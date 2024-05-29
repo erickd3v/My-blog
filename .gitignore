@@ -1,5 +1,8 @@
-# Created by https://www.toptal.com/developers/gitignore/api/node,visualstudiocode
-# Edit at https://www.toptal.com/developers/gitignore?templates=node,visualstudiocode
+# build output
+dist/
+
+# generated types
+.astro/
 
 ## pack-age ##
 package-lock.json
@@ -83,10 +86,14 @@ web_modules/
 
 # dotenv environment variable files
 .env
+.env.production
 .env.development.local
 .env.test.local
 .env.production.local
 .env.local
+
+# macOS-specific files
+.DS_Store
 
 # parcel-bundler cache (https://parceljs.org/)
 .cache
@@ -165,4 +172,5 @@ dist
 .history
 .ionide
 
-# End of https://www.toptal.com/developers/gitignore/api/node,visualstudiocode
+# jetbrains setting folder
+.idea/

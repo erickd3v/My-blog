@@ -1,0 +1,12 @@
+---
+// Images
+import Image from "./Image.astro";
+
+const localtAlt = "imagen Beta";
+---
+
+<header class={`mx-auto w-10/12 ${Astro.props.class}`}>
+  <a href="/">
+    <Image img="/svg/logo.svg" alt={localtAlt} classImg="h-16 w-auto" />
+  </a>
+</header>

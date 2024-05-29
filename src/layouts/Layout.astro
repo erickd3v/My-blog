@@ -1,0 +1,58 @@
+---
+import { ViewTransitions } from "astro:transitions";
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+
+interface Props {
+  pageTitle: string;
+}
+const { pageTitle } = Astro.props;
+---
+
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="description" content="Astro description" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/svg+xml" href="favicon.webp" />
+    <meta name="generator" content={Astro.generator} />
+    <title>{pageTitle}</title>
+    <ViewTransitions />
+  </head>
+  <body class="bg-[#20252C] mx-auto container lg:max-w-4xl">
+    <Header class="mb-10" />
+    <slot />
+    <Footer />
+    <style is:global>
+      :root {
+        color-scheme: light dark;
+      }
+      body::before {
+        content: "";
+        background: rgb(0 153 255 / 0.1);
+        filter: blur(100px);
+        width: 300px;
+        height: 300px;
+        position: absolute;
+        left: -50px;
+        top: 100px;
+        z-index: -1;
+      }
+      body {
+        font-family:
+          system-ui,
+          -apple-system,
+          BlinkMacSystemFont,
+          "Segoe UI",
+          Roboto,
+          Oxygen,
+          Ubuntu,
+          Cantarell,
+          "Open Sans",
+          "Helvetica Neue",
+          sans-serif;
+      }
+    </style>
+  </body>
+</html>
